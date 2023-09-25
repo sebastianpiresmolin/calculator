@@ -1,0 +1,105 @@
+.container {
+    width: 500px;
+    height: 700px;
+    background-color: lightgray;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+
+}
+
+.calculator {
+    width: 475px;
+    height: 675px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.screen {
+    margin-top: 25px;
+    height: 100px;
+    width: 400px;
+    background-color: rgba(0, 128, 0, 0.329);
+    border-radius: 3px;
+}
+
+.buttonPad {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(216, 213, 213);
+    height: 450px;
+    width: 350px;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+
+}
+.row1 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-evenly;
+    text-align: center;
+    line-height: 30px;
+}
+.row2 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-evenly;
+}
+.row3 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-evenly;
+}
+.row4 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: space-evenly;
+}
+.row5 {
+    display: flex;
+    flex-direction: row;
+    width: inherit;
+    justify-content: center;
+}
+
+
+.operator,
+button {
+    background-color: rgb(82, 81, 81);
+    height: 30px;
+    width: 35px;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: none;
+}
+
+.number,
+button {
+
+    background-color: rgb(82, 81, 81);
+    height: 30px;
+    width: 35px;
+    border-radius: 5px;
+    color: whitesmoke;
+    border: none;
+}
+
+#result {
+    width: 100px;
+
+}
