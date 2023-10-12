@@ -1,131 +1,52 @@
-let totalString = ''; //displayed on screen
+let totalString = ''; // String displayed on screen
 
 const screenElement = document.getElementById('screenShow');
-//buttons
-const one = document.getElementById('n1');
-const two = document.getElementById('n2');
-const three = document.getElementById('n3');
-const four = document.getElementById('n4');
-const five = document.getElementById('n5');
-const six = document.getElementById('n6');
-const seven = document.getElementById('n7');
-const eight = document.getElementById('n8');
-const nine = document.getElementById('n9');
-const zero = document.getElementById('n0');
-const clear = document.getElementById('clear');
-const addition = document.getElementById('addition');
-const subtraction = document.getElementById('subtraction');
-const division = document.getElementById('division');
-const multiplication = document.getElementById('multiplication');
-const power2 = document.getElementById('power2');
-const power3 = document.getElementById('power3');
-const log10 = document.getElementById('log10');
-const leftbracket = document.getElementById('leftbracket');
-const rightbracket = document.getElementById('rightbracket');
-const result = document.getElementById('result'); //result
 
-//number pad eventListeners
-one.addEventListener("click", function() {
-    totalString = totalString.concat('1');
-    screenElement.innerHTML = totalString;
-});
+// Map button IDs to their respective characters or actions
+const buttonMapping = {
+    n1: '1',
+    n2: '2',
+    n3: '3',
+    n4: '4',
+    n5: '5',
+    n6: '6',
+    n7: '7',
+    n8: '8',
+    n9: '9',
+    n0: '0',
+    clear: 'clear', // Special action to clear the totalString
+    addition: ' + ',
+    subtraction: ' - ',
+    division: ' / ',
+    multiplication: ' * ',
+    power2: ' ** ',
+    log10: 'Math.log10(',
+    leftbracket: '(',
+    rightbracket: ')',
+};
 
-two.addEventListener("click", function() {
-    totalString = totalString.concat('2');
-    screenElement.innerHTML = totalString;
-});
-
-three.addEventListener("click", function() {
-    totalString = totalString.concat('3');
-    screenElement.innerHTML = totalString;
-});
-
-four.addEventListener("click", function() {
-    totalString = totalString.concat('4');
-    screenElement.innerHTML = totalString;
-});
-
-five.addEventListener("click", function() {
-    totalString = totalString.concat('5');
-    screenElement.innerHTML = totalString;
-});
-
-six.addEventListener("click", function() {
-    totalString = totalString.concat('6');
-    screenElement.innerHTML = totalString;
-});
-
-seven.addEventListener("click", function() {
-    totalString = totalString.concat('7');
-    screenElement.innerHTML = totalString;
-});
-
-eight.addEventListener("click", function() {
-    totalString = totalString.concat('8');
-    screenElement.innerHTML = totalString;
-});
-
-nine.addEventListener("click", function() {
-    totalString = totalString.concat('9');
-    screenElement.innerHTML = totalString;
-});
-
-zero.addEventListener("click", function() {
-    totalString = totalString.concat('0');
-    screenElement.innerHTML = totalString;
-});
-
-clear.addEventListener("click", function() {
-    totalString = '';
-    screenElement.innerHTML = totalString;
-});
-
-addition.addEventListener("click", function() {
-    totalString = totalString.concat(' + ');
-    screenElement.innerHTML = totalString;
-});
-
-subtraction.addEventListener("click", function() {
-    totalString = totalString.concat(' - ');
-    screenElement.innerHTML = totalString;
-});
-
-division.addEventListener("click", function() {
-    totalString = totalString.concat(' / ');
-    screenElement.innerHTML = totalString;
-});
-
-multiplication.addEventListener("click", function() {
-    totalString = totalString.concat(' * ');
-    screenElement.innerHTML = totalString;
-});
-
-power2.addEventListener("click", function() {
-    totalString = totalString.concat(' ** ');
-    screenElement.innerHTML = totalString;
-});
-
-
-log10.addEventListener("click", function() {
-    totalString = totalString.concat(' Math.log10(');
-    screenElement.innerHTML = totalString;
-});
-
-leftbracket.addEventListener("click", function() {
-    totalString = totalString.concat('(');
-    screenElement.innerHTML = totalString;
-});
-
-rightbracket.addEventListener("click", function() {
-    totalString = totalString.concat(')');
-    screenElement.innerHTML = totalString;
-});
-
-result.addEventListener("click", function() {
-    totalString = eval(totalString).toString();
-    screenElement.innerHTML = totalString;
-});
-
-if ( totalString.length >= 43) {
-    totalString = totalString + '\n';
+// Event listeners for buttons
+for (const buttonId in buttonMapping) {
+    if (buttonMapping.hasOwnProperty(buttonId)) {
+        const button = document.getElementById(buttonId);
+        button.addEventListener("click", function() {
+            if (buttonMapping[buttonId] === 'clear') {
+                totalString = '';
+            } else {
+                totalString += buttonMapping[buttonId];
+            }
+            screenElement.innerHTML = totalString;
+        });
+    }
 }
+
+// Calculate and display the result
+result.addEventListener("click", function() {
+    try {
+        totalString = eval(totalString).toString();
+        screenElement.innerHTML = totalString;
+    } catch (error) {
+        totalString = 'Error';
+        screenElement.innerHTML = totalString;
+    }
+});
