@@ -1,9 +1,15 @@
+html {
+    background: url(media/background.jpg);
+    background-size: cover;
+}
+
 body {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100vh;
     align-items: center;
+    font-family: 'Space mono', sans-serif;
 }
 
 .container {
@@ -32,6 +38,7 @@ body {
     align-content: center;
     align-items: center;
     border-radius: 3px;
+    font-family: 'Space Mono', sans-serif;
 
 }
 
@@ -51,6 +58,12 @@ body {
     align-items: center;
     text-align: left;
 
+}
+
+p {
+    margin-left: 10px;
+    font-size: 30px;
+    margin-right: 10px;
 }
 
 .buttonPad {
@@ -109,6 +122,7 @@ button {
     border-radius: 4px;
     color: whitesmoke;
     border: none;
+    font-family: 'Space Mono', sans-serif;
 }
 
 .number
@@ -120,6 +134,8 @@ button {
     border-radius: 4px;
     color: whitesmoke;
     border: none;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 20px;
 }
 
 #result {
@@ -131,8 +147,10 @@ button {
     border: 3px;
     border-style: outset;
     text-align: center;
-    line-height: 4;
+    line-height: 1.1;
     margin-right: -53px;
+    font-family: 'Space Mono', sans-serif;
+    font-size: 50px;
 
 }
 
@@ -149,4 +167,11 @@ button:active {
 
 #n0 {
     margin-left: 12px;
+}
+
+#power2 p {
+    text-align: center;
+    line-height: 0;
+    margin: 0;
+    margin-left: 7px;
 }
