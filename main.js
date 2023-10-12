@@ -1,6 +1,6 @@
 let totalString = ''; //displayed on screen
 
-const screenElement = document.getElementById('screen');
+const screenElement = document.getElementById('screenShow');
 //buttons
 const one = document.getElementById('n1');
 const two = document.getElementById('n2');
@@ -93,3 +93,7 @@ result.addEventListener("click", function() {
     totalString = eval(totalString).toString();
     screenElement.innerHTML = totalString;
 });
+
+if ( totalString.length >= 43) {
+    totalString = totalString + '\n';
+}
