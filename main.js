@@ -11,6 +11,12 @@ const six = document.getElementById('n6');
 const seven = document.getElementById('n7');
 const eight = document.getElementById('n8');
 const nine = document.getElementById('n9');
+const clear = document.getElementById('clear');
+const addition = document.getElementById('addition');
+const subtraction = document.getElementById('subtraction');
+const division = document.getElementById('division');
+const multiplication = document.getElementById('multiplication');
+const result = document.getElementById('result'); //result
 
 //number pad eventListeners
 one.addEventListener("click", function() {
@@ -55,5 +61,35 @@ eight.addEventListener("click", function() {
 
 nine.addEventListener("click", function() {
     totalString = totalString.concat('9');
+    screenElement.innerHTML = totalString;
+});
+
+clear.addEventListener("click", function() {
+    totalString = '';
+    screenElement.innerHTML = totalString;
+});
+
+addition.addEventListener("click", function() {
+    totalString = totalString.concat(' + ');
+    screenElement.innerHTML = totalString;
+});
+
+subtraction.addEventListener("click", function() {
+    totalString = totalString.concat(' - ');
+    screenElement.innerHTML = totalString;
+});
+
+division.addEventListener("click", function() {
+    totalString = totalString.concat(' / ');
+    screenElement.innerHTML = totalString;
+});
+
+multiplication.addEventListener("click", function() {
+    totalString = totalString.concat(' * ');
+    screenElement.innerHTML = totalString;
+});
+
+result.addEventListener("click", function() {
+    totalString = eval(totalString).toString();
     screenElement.innerHTML = totalString;
 });
