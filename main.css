@@ -132,6 +132,7 @@ button {
     border-style: outset;
     text-align: center;
     line-height: 4;
+    margin-right: -53px;
 
 }
 
@@ -144,4 +145,8 @@ button {
 
 button:active {
     transform: scale(0.98);
+}
+
+#n0 {
+    margin-left: 12px;
 }

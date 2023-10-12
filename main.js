@@ -11,11 +11,17 @@ const six = document.getElementById('n6');
 const seven = document.getElementById('n7');
 const eight = document.getElementById('n8');
 const nine = document.getElementById('n9');
+const zero = document.getElementById('n0');
 const clear = document.getElementById('clear');
 const addition = document.getElementById('addition');
 const subtraction = document.getElementById('subtraction');
 const division = document.getElementById('division');
 const multiplication = document.getElementById('multiplication');
+const power2 = document.getElementById('power2');
+const power3 = document.getElementById('power3');
+const log10 = document.getElementById('log10');
+const leftbracket = document.getElementById('leftbracket');
+const rightbracket = document.getElementById('rightbracket');
 const result = document.getElementById('result'); //result
 
 //number pad eventListeners
@@ -64,6 +70,11 @@ nine.addEventListener("click", function() {
     screenElement.innerHTML = totalString;
 });
 
+zero.addEventListener("click", function() {
+    totalString = totalString.concat('0');
+    screenElement.innerHTML = totalString;
+});
+
 clear.addEventListener("click", function() {
     totalString = '';
     screenElement.innerHTML = totalString;
@@ -86,6 +97,27 @@ division.addEventListener("click", function() {
 
 multiplication.addEventListener("click", function() {
     totalString = totalString.concat(' * ');
+    screenElement.innerHTML = totalString;
+});
+
+power2.addEventListener("click", function() {
+    totalString = totalString.concat(' ** ');
+    screenElement.innerHTML = totalString;
+});
+
+
+log10.addEventListener("click", function() {
+    totalString = totalString.concat(' Math.log10(');
+    screenElement.innerHTML = totalString;
+});
+
+leftbracket.addEventListener("click", function() {
+    totalString = totalString.concat('(');
+    screenElement.innerHTML = totalString;
+});
+
+rightbracket.addEventListener("click", function() {
+    totalString = totalString.concat(')');
     screenElement.innerHTML = totalString;
 });
 
